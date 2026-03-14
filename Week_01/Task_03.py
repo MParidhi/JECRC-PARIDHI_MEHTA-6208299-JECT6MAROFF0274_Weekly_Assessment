@@ -3,7 +3,7 @@ from time import sleep
 
 driver=webdriver.Chrome()
 
-driver.get('https://www.amazon.in/')
+driver.get('https://www.myntra.com/')
 print(f'Title of page is: {driver.title}')
 sleep(2)
 
