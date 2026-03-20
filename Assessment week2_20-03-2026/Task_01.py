@@ -15,6 +15,9 @@ driver.maximize_window()
 
 wait = WebDriverWait(driver, 10)
 
+assert "amazon.in" in driver.current_url, "url not found"
+print("It's present!")
+
 category_dropdown = wait.until(EC.presence_of_element_located((By.XPATH, "//select[@id = 'searchDropdownBox']")))
 select = Select(category_dropdown)
 
@@ -29,7 +32,6 @@ titles = wait.until(EC.visibility_of_all_elements_located((By.XPATH, '//a[@class
 for i in range(0, 5):
     print(titles[i].text)
 
-first = wait.until(EC.visibility_of_element_located((By.XPATH, '(//a[@class = "a-link-normal s-line-clamp-2 puis-line-clamp-3-for-col-4-and-8 s-link-style a-text-normal"]/descendant::h2/child::span)[1]')))
+first= wait.until(EC.visibility_of_element_located((By.XPATH, '(//a[@class = "a-link-normal s-line-clamp-2 puis-line-clamp-3-for-col-4-and-8 s-link-style a-text-normal"]/descendant::h2/child::span)[1]')))
 first.click()
-
 
